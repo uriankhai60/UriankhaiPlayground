@@ -30,7 +30,11 @@ pipeline = FluxPipeline.from_pretrained(
 
 prompt = "a tiny astronaut hatching from an egg on the moon"
 start_time = time.time()
-image = pipeline(prompt, guidance_scale=3.5, height=1024, width=1024, num_inference_steps=50).images[0]
+image = pipeline(prompt, 
+                 guidance_scale=3.5, 
+                 height=1024, 
+                 width=1024, 
+                 num_inference_steps=50).images[0]
 inferece_time = time.time() - start_time
 
 print(f"inference_time: {inferece_time:.2f}", flush=True)
